@@ -1,16 +1,9 @@
 package com.ignek.marketplace.orphen.fragment.cleaner.portlet;
 
 import com.ignek.marketplace.orphen.fragment.cleaner.constants.OrphenFragmentCleanerWebPortletKeys;
-import com.liferay.portal.kernel.log.Log;
-import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 
-import java.io.IOException;
-
 import javax.portlet.Portlet;
-import javax.portlet.PortletException;
-import javax.portlet.RenderRequest;
-import javax.portlet.RenderResponse;
 
 import org.osgi.service.component.annotations.Component;
 

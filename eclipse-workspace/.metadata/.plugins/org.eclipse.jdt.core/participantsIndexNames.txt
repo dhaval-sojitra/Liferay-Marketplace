@@ -1,5 +1,11 @@
 INDEX VERSION 1.134
 /home/dell/work/projects/liferay-marketplace/eclipse-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3544284681.index
 /test-module/src/main/java
+/home/dell/work/projects/liferay-marketplace/eclipse-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1921228936.index
+/mri-custom-admin-action-api/src/main/java
+/home/dell/work/projects/liferay-marketplace/eclipse-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/4124563559.index
+/custom-logger/src/main/java
+/home/dell/work/projects/liferay-marketplace/eclipse-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1033751944.index
+/mri-custom-admin-action-api/src/main/java
 /home/dell/work/projects/liferay-marketplace/eclipse-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/564889191.index
 /orphen-fragment-cleaner-web/src/main/java

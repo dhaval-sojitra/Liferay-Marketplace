@@ -1,0 +1,212 @@
+package com.ignek.marketplace.orphen.fragment.cleaner.log;
+
+import com.ignek.marketplace.orphen.fragment.cleaner.constants.OrphenFragmentCleanerConstants;
+import com.liferay.petra.string.StringPool;
+import com.liferay.portal.kernel.log.Log;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
+
+public class OrphenLog implements Log{
+	
+	private Log wrapperLogger;
+	private List<String> logBuffer = new LinkedList<>();
+	
+	OrphenLog(Log wrappedLogger) {
+
+		if (wrappedLogger == null)
+			throw new RuntimeException("Logger cannot be null");
+
+		this.wrapperLogger = wrappedLogger;
+	}
+
+	@Override
+	public void debug(Object msg) {
+		wrapperLogger.debug(msg);
+		logBuffer.add(getCurrentDateTimeString() + OrphenFragmentCleanerConstants.DEBUG + msg);		
+	}
+
+	@Override
+	public void debug(Object msg, Throwable t) {
+		wrapperLogger.debug(msg, t);
+		logBuffer.add(getCurrentDateTimeString() + OrphenFragmentCleanerConstants.DEBUG + msg + StringPool.SEMICOLON + StringPool.SPACE
+				+ OrphenFragmentCleanerConstants.ERROR + StringPool.SPACE + StringPool.APOSTROPHE + t.getMessage() + StringPool.APOSTROPHE
+				+ StringPool.SPACE + StringPool.OPEN_PARENTHESIS + t.getClass().getName()
+				+ StringPool.CLOSE_PARENTHESIS);		
+	}
+
+	@Override
+	public void debug(Throwable t) {
+		wrapperLogger.debug(t);
+		logBuffer.add(getCurrentDateTimeString() + OrphenFragmentCleanerConstants.DEBUG + OrphenFragmentCleanerConstants.ERROR + StringPool.SPACE
+				+ StringPool.APOSTROPHE + t.getMessage() + StringPool.APOSTROPHE + StringPool.SPACE
+				+ StringPool.OPEN_PARENTHESIS + t.getClass().getName() + StringPool.CLOSE_PARENTHESIS);
+	}
+
+	@Override
+	public void error(Object msg) {
+		wrapperLogger.error(msg);
+		logBuffer.add(
+				"<span class='text-danger'>" + getCurrentDateTimeString() + OrphenFragmentCleanerConstants.ERROR_COLON + msg + "</span>");
+	}
+
+	@Override
+	public void error(Object msg, Throwable t) {
+		wrapperLogger.error(msg, t);
+		logBuffer.add(
+				getCurrentDateTimeString() + OrphenFragmentCleanerConstants.ERROR_COLON + msg + StringPool.SEMICOLON + StringPool.SPACE
+						+ OrphenFragmentCleanerConstants.ERROR + StringPool.SPACE+StringPool.APOSTROPHE + t.getMessage() + StringPool.APOSTROPHE + StringPool.SPACE
+						+ StringPool.OPEN_PARENTHESIS + t.getClass().getName() + StringPool.CLOSE_PARENTHESIS);
+	}
+
+	@Override
+	public void error(Throwable t) {
+		wrapperLogger.error(t);
+		logBuffer.add(getCurrentDateTimeString() + OrphenFragmentCleanerConstants.ERROR_COLON + StringPool.SPACE + OrphenFragmentCleanerConstants.ERROR
+				+ StringPool.SPACE+StringPool.APOSTROPHE + t.getMessage() + StringPool.APOSTROPHE + StringPool.SPACE + StringPool.OPEN_PARENTHESIS
+				+ t.getClass().getName() + StringPool.CLOSE_PARENTHESIS);
+	}
+
+	@Override
+	public void fatal(Object msg) {
+		wrapperLogger.fatal(msg);
+		logBuffer.add(getCurrentDateTimeString() + OrphenFragmentCleanerConstants.FATAL + msg);
+	}
+
+	@Override
+	public void fatal(Object msg, Throwable t) {
+		wrapperLogger.fatal(msg, t);
+		logBuffer.add(getCurrentDateTimeString() + OrphenFragmentCleanerConstants.FATAL + msg + StringPool.SEMICOLON + StringPool.SPACE
+				+ OrphenFragmentCleanerConstants.ERROR + StringPool.SPACE+StringPool.APOSTROPHE + t.getMessage() + StringPool.APOSTROPHE + StringPool.SPACE
+				+ StringPool.OPEN_PARENTHESIS + t.getClass().getName() + StringPool.CLOSE_PARENTHESIS);
+	}
+
+	@Override
+	public void fatal(Throwable t) {
+		wrapperLogger.fatal(t);
+		logBuffer.add(getCurrentDateTimeString() + OrphenFragmentCleanerConstants.FATAL + OrphenFragmentCleanerConstants.ERROR + StringPool.SPACE+StringPool.APOSTROPHE + t.getMessage()
+				+ StringPool.APOSTROPHE +StringPool.SPACE+ StringPool.OPEN_PARENTHESIS + t.getClass().getName() + StringPool.CLOSE_PARENTHESIS);
+	}
+
+	@Override
+	public void info(Object msg) {
+		wrapperLogger.info(msg);
+		logBuffer.add(getCurrentDateTimeString() + StringPool.SPACE + OrphenFragmentCleanerConstants.INFO + StringPool.SPACE + msg);
+	}
+
+	public void success(Object msg) {
+		wrapperLogger.info(msg);
+		logBuffer.add(
+				"<span class='text-success'>" + getCurrentDateTimeString() + OrphenFragmentCleanerConstants.SUCCESS + msg + "</span>");
+	}
+
+	@Override
+	public void info(Object msg, Throwable t) {
+		wrapperLogger.info(msg, t);
+		logBuffer.add(getCurrentDateTimeString() + OrphenFragmentCleanerConstants.INFO + msg + StringPool.SEMICOLON + StringPool.SPACE
+				+ OrphenFragmentCleanerConstants.ERROR + StringPool.SPACE+StringPool.APOSTROPHE + t.getMessage() + StringPool.APOSTROPHE + StringPool.SPACE
+				+ StringPool.OPEN_PARENTHESIS + t.getClass().getName() + StringPool.CLOSE_PARENTHESIS);
+	}
+
+	@Override
+	public void info(Throwable t) {
+		wrapperLogger.info(t);
+		logBuffer.add(getCurrentDateTimeString() + OrphenFragmentCleanerConstants.INFO + StringPool.SEMICOLON + StringPool.SPACE
+				+ OrphenFragmentCleanerConstants.ERROR + StringPool.SPACE+StringPool.APOSTROPHE + t.getMessage() + StringPool.APOSTROPHE + StringPool.SPACE
+				+ StringPool.OPEN_PARENTHESIS + t.getClass().getName() + StringPool.CLOSE_PARENTHESIS);
+	}
+
+	@Override
+	public boolean isDebugEnabled() {
+		return wrapperLogger.isDebugEnabled();
+	}
+
+	@Override
+	public boolean isErrorEnabled() {
+		return wrapperLogger.isErrorEnabled();
+	}
+
+	@Override
+	public boolean isFatalEnabled() {
+		return wrapperLogger.isFatalEnabled();
+	}
+
+	@Override
+	public boolean isInfoEnabled() {
+		return wrapperLogger.isInfoEnabled();
+	}
+
+	@Override
+	public boolean isTraceEnabled() {
+		return wrapperLogger.isTraceEnabled();
+	}
+
+	@Override
+	public boolean isWarnEnabled() {
+		return wrapperLogger.isWarnEnabled();
+	}
+
+	@Override
+	public void setLogWrapperClassName(String className) {
+		wrapperLogger.setLogWrapperClassName(className);
+	}
+
+	@Override
+	public void trace(Object msg) {
+		wrapperLogger.trace(msg);
+		logBuffer.add(getCurrentDateTimeString() + OrphenFragmentCleanerConstants.TRACE + msg);
+	}
+
+	@Override
+	public void trace(Object msg, Throwable t) {
+		wrapperLogger.trace(msg, t);
+		logBuffer.add(getCurrentDateTimeString() + OrphenFragmentCleanerConstants.TRACE + msg + StringPool.SEMICOLON + StringPool.SPACE
+				+ OrphenFragmentCleanerConstants.ERROR + StringPool.SPACE+StringPool.APOSTROPHE + t.getMessage() + StringPool.APOSTROPHE + StringPool.SPACE
+				+ StringPool.OPEN_PARENTHESIS + t.getClass().getName() + StringPool.CLOSE_PARENTHESIS);
+	}
+
+	@Override
+	public void trace(Throwable t) {
+		wrapperLogger.trace(t);
+		logBuffer.add(getCurrentDateTimeString() + OrphenFragmentCleanerConstants.TRACE + OrphenFragmentCleanerConstants.ERROR + StringPool.SPACE+StringPool.APOSTROPHE + t.getMessage()
+				+ StringPool.APOSTROPHE + StringPool.SPACE + StringPool.OPEN_PARENTHESIS + t.getClass().getName()
+				+ StringPool.CLOSE_PARENTHESIS);
+	}
+
+	@Override
+	public void warn(Object msg) {
+		wrapperLogger.trace(msg);
+		logBuffer.add(getCurrentDateTimeString() + OrphenFragmentCleanerConstants.WARN + msg);
+	}
+
+	@Override
+	public void warn(Object msg, Throwable t) {
+		wrapperLogger.trace(msg, t);
+		logBuffer.add(getCurrentDateTimeString() + OrphenFragmentCleanerConstants.WARN + msg + StringPool.SEMICOLON + StringPool.SPACE
+				+ OrphenFragmentCleanerConstants.ERROR + StringPool.SPACE+StringPool.APOSTROPHE + t.getMessage() + StringPool.APOSTROPHE + StringPool.SPACE
+				+ StringPool.OPEN_PARENTHESIS + t.getClass().getName() + StringPool.CLOSE_PARENTHESIS);
+	}
+
+	@Override
+	public void warn(Throwable t) {
+		wrapperLogger.trace(t);
+		logBuffer.add(getCurrentDateTimeString() + OrphenFragmentCleanerConstants.WARN + OrphenFragmentCleanerConstants.ERROR + StringPool.SPACE+StringPool.APOSTROPHE + t.getMessage()
+				+ StringPool.APOSTROPHE + StringPool.SPACE + StringPool.OPEN_PARENTHESIS + t.getClass().getName()
+				+ StringPool.CLOSE_PARENTHESIS);
+	}
+
+	public void cleanBuffer() {
+		logBuffer = new LinkedList<>();
+	}
+
+	public List<String> getBufferedContent() {
+		return logBuffer;
+	}
+	
+	private String getCurrentDateTimeString() {
+		return new SimpleDateFormat(OrphenFragmentCleanerConstants.LOG_DATE_FORMAT).format(new Date());
+	}
+
+}

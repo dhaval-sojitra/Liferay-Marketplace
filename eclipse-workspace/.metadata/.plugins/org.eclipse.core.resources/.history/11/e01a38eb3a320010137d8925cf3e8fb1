@@ -1,0 +1,11 @@
+package com.ignek.custom.logger.constants;
+
+/**
+ * @author dell
+ */
+public class CustomLoggerPortletKeys {
+
+	public static final String CUSTOMLOGGER =
+		"com_ignek_custom_logger_CustomLoggerPortlet";
+
+}

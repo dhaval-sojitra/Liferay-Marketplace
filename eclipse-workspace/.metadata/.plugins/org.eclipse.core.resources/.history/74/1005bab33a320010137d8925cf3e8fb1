@@ -1,0 +1,7 @@
+Bundle-Name: custom-logger
+Bundle-SymbolicName: com.ignek.custom.logger
+Bundle-Version: 1.0.0
+Export-Package: com.ignek.custom.logger.constants
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"

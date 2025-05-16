@@ -1,0 +1,54 @@
+package com.ignek.marketplace.orphen.fragment.cleaner.portlet;
+
+import com.ignek.marketplace.orphen.fragment.cleaner.constants.OrphenFragmentCleanerWebPortletKeys;
+import com.ignek.marketplace.orphen.fragment.cleaner.log.DefaultOrphenLogFactory;
+import com.ignek.marketplace.orphen.fragment.cleaner.log.OrphenLog;
+import com.ignek.marketplace.orphen.fragment.cleaner.portlet.action.OrphenFragmentCleanerMVCActionCommand;
+import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
+
+import java.io.IOException;
+
+import javax.portlet.Portlet;
+import javax.portlet.PortletException;
+import javax.portlet.RenderRequest;
+import javax.portlet.RenderResponse;
+
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+
+/**
+ * @author dell
+ */
+
+@Component(
+	property = {
+		"com.liferay.portlet.display-category=category.hidden",
+		"com.liferay.portlet.header-portlet-css=/css/main.css",
+		"com.liferay.portlet.instanceable=false",
+		"javax.portlet.display-name=Orphen Fragment Cleaner Web",
+		"javax.portlet.init-param.template-path=/",
+		"javax.portlet.init-param.view-template=/fragment_cleaner.jsp",
+		"javax.portlet.name=" + OrphenFragmentCleanerWebPortletKeys.ORPHEN_FRAGMENT_CLEANER_WEB_PORTLET_KEY,
+		"javax.portlet.resource-bundle=content.Language",
+		"javax.portlet.security-role-ref=administrator"
+	},
+	service = Portlet.class
+)
+public class OrphenFragmentCleanerWebPortlet extends MVCPortlet {
+	
+	@Override
+	public void render(RenderRequest renderRequest, RenderResponse renderResponse)
+			throws IOException, PortletException {
+
+		orphenLog.info("Working...");
+		orphenLog.warn("Working..............");
+		
+		super.render(renderRequest, renderResponse);
+	}
+	
+	@Reference
+	DefaultOrphenLogFactory defaultOrphenLogFactory;
+	
+	OrphenLog orphenLog = (OrphenLog) defaultOrphenLogFactory.getLog(OrphenFragmentCleanerMVCActionCommand.class);
+
+}

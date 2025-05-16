@@ -1,0 +1,5 @@
+javax.portlet.title.mri_custom_admin_action_api_MriCustomAdminActionApiPortlet=Reload Picklists
+mricustomadminactionapi.caption=Hello from MriCustomAdminActionApi!
+right.panel.title=Subscribe Logs
+start.log.button=Start Logs
+stop.log.button=Stop Logs

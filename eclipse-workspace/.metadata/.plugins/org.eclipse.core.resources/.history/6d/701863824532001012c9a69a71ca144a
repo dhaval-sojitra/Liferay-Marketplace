@@ -1,0 +1,70 @@
+package com.ignek.marketplace.orphen.fragment.cleaner.portlet.action;
+
+import com.ignek.marketplace.orphen.fragment.cleaner.constants.OrphenFragmentCleanerWebPortletKeys;
+import com.ignek.marketplace.orphen.fragment.cleaner.log.OrphenLogFactory;
+import com.liferay.portal.kernel.json.JSONArray;
+import com.liferay.portal.kernel.json.JSONFactoryUtil;
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+import com.liferay.portal.kernel.portlet.bridges.mvc.BaseMVCResourceCommand;
+import com.liferay.portal.kernel.portlet.bridges.mvc.MVCResourceCommand;
+import com.liferay.portal.kernel.servlet.ServletResponseUtil;
+import com.liferay.portal.kernel.util.ContentTypes;
+import com.liferay.portal.kernel.util.Portal;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+
+import javax.portlet.ResourceRequest;
+import javax.portlet.ResourceResponse;
+import javax.servlet.http.HttpServletResponse;
+
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+
+@Component(
+	    immediate = true,
+	    property = {
+	        "javax.portlet.name="+OrphenFragmentCleanerWebPortletKeys.ORPHEN_FRAGMENT_CLEANER_WEB_PORTLET_KEY,
+	        "mvc.command.name=/log/get-live-logs"
+	    },
+	    service = MVCResourceCommand.class
+	)
+public class OrphenLiveLogMVCResourceCommand extends BaseMVCResourceCommand {
+	
+	@Reference
+    private OrphenLogFactory installationLoggerFactory;
+	
+	private static final Log _log = LogFactoryUtil.getLog(OrphenLiveLogMVCResourceCommand.class);
+
+	
+	 private static final int MAX_LOG_SIZE = 501;
+	
+	 @Override
+	    protected void doServeResource(ResourceRequest resourceRequest, ResourceResponse resourceResponse) {
+	        try {
+	            Log installationLog = installationLoggerFactory.getLog(MriCustomAdminActionApiPortletKeys.LIVE_LOG);
+
+	            List<String> jsonLogs = Optional.ofNullable(((MRILog) installationLog).getBufferedContent())
+	                    .orElse(Collections.emptyList());
+
+	            if (jsonLogs.size() > MAX_LOG_SIZE) {
+	                jsonLogs = jsonLogs.subList(jsonLogs.size() - MAX_LOG_SIZE, jsonLogs.size());
+	            }
+
+	            JSONArray jsonArray = JSONFactoryUtil.createJSONArray();
+	            jsonLogs.forEach(jsonArray::put);
+
+	            HttpServletResponse httpResponse = portal.getHttpServletResponse(resourceResponse);
+	            httpResponse.setContentType(ContentTypes.APPLICATION_JSON);
+	            ServletResponseUtil.write(httpResponse, jsonArray.toString());
+
+	        } catch (Exception e) {
+	            _log.error("Error retrieving live logs: ", e);
+	        }
+	    }
+	 
+	@Reference
+	Portal portal;
+}

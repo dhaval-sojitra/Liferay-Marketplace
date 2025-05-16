@@ -1,0 +1,12 @@
+#
+#Fri May 16 18:50:55 IST 2025
+derivedResources=.gradle\:build\:modules/build\:modules/custom-logger/build\:modules/orphen-fragment-cleaner-web/build
+linkedResources=
+classpath=<?xml version\="1.0" encoding\="UTF-8"?>\n<classpath>\n</classpath>\n
+managedNatures=
+buildDir=build
+managedBuilders=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><commands/>
+buildScriptPath=build.gradle
+subprojectPaths=modules\:modules/custom-logger\:modules/orphen-fragment-cleaner-web
+hasAutoBuildTasks=false
+gradleVersion=8.5

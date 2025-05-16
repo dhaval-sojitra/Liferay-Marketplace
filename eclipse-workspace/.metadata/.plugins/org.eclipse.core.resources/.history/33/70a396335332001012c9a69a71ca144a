@@ -1,0 +1,57 @@
+<%@ include file="/init.jsp"%>
+
+<portlet:actionURL name="/orphen_fragment_cleaner"
+	var="fragmentCleanerURL" />
+
+<portlet:resourceURL id="/log/get-live-logs" var="liveLogMVCResourceURL" />
+
+<div class="container container-form-lg">
+	<div class="row">
+		<div class="col-4">
+			<div class="sheet">
+				<h2>Actions</h2>
+				<hr />
+				<div class="d-flex align-items-baseline justify-content-between">
+					<p>Orfen Fragment Cleaner</p>
+					<a class="btn btn-secondary" id="executeButton" href="<%=fragmentCleanerURL%>">Execute</a>
+				</div>
+
+			</div>
+		</div>
+		<div class="col-8">
+			<ul class="list-group ">
+				<li class="list-group-header p-1 pl-3">
+					<h3 class="list-group-header-title text-uppercase">
+						<liferay-ui:message key="right.panel.title" />
+					</h3>
+					<div class="pull-right">
+						<button class="btn btn-primary" id="subscibeLogButton">
+							<liferay-ui:message key="start.log.button" />
+						</button>
+						<button class="btn btn-primary" id="stopLogButton"
+							disabled="disabled">
+							<liferay-ui:message key="stop.log.button" />
+						</button>
+					</div>
+
+				</li>
+				<li class="list-group-card">
+					<ul class="list-group">
+						<div id="liveLogDiv"></div>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<script>
+	
+<%@ include file="/js/script.js" %>
+	
+</script>
+
+<script type="text/javascript">
+	var liveLogMVCResourceURL = '${liveLogMVCResourceURL}';
+	var nameSpace = '<portlet:namespace/>'
+</script>

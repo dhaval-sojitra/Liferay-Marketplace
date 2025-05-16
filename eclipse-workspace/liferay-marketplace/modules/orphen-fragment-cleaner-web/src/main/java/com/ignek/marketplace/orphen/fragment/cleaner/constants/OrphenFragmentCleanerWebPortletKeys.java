@@ -8,4 +8,6 @@ public class OrphenFragmentCleanerWebPortletKeys {
 	public static final String ORPHEN_FRAGMENT_CLEANER_WEB_PORTLET_KEY =
 		"com_liferay_marketplace_orphen_fragment_cleaner_OrphenFragmentCleanerWebPortlet";
 
+	public static final String LIVE_LOG = "LIVE_LOG";
+
 }

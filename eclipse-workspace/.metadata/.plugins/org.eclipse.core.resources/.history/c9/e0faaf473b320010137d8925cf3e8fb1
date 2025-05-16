@@ -1,0 +1,5 @@
+package com.ignek.custom.logger.log;
+
+public class CustomLog {
+
+}

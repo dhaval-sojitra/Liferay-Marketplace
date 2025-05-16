@@ -1,0 +1,55 @@
+-add-resource=C\:/Work/Music_Reports/132/codebase/liferay-web/mri-workspace/modules/mri-custom-admin-action-api/build/tmp/compileJSP,C\:/Work/Music_Reports/132/codebase/liferay-web/mri-workspace/modules/mri-custom-admin-action-api/build/jspc
+-cdiannotations=
+-consumer-policy=${replacestring;${range;[\=\=,\=\=]};.*,(.*)];$1}
+-contract=*
+-donotcopy=(.*.wsdd)
+-fixupmessages.classpath.empty=Classpath is empty
+-fixupmessages.deprecated=annotations are deprecated
+-fixupmessages.unicode.string=Invalid unicode string
+-includeresource=lib/unirest-java.jar\=unirest-java-1.3.1.jar
+-includeresource.compileInclude=
+-jsp=*.jsp,*.jspf,*.jspx
+-liferay-service-xml=service.xml,*/service.xml
+-metatype=*
+-noclassforname=true
+-plugin.liferay=com.liferay.ant.bnd.resource.AddResourceVerifierPlugin,com.liferay.ant.bnd.jsp.JspAnalyzerPlugin,com.liferay.ant.bnd.metatype.MetatypePlugin,com.liferay.ant.bnd.npm.NpmAnalyzerPlugin,com.liferay.ant.bnd.resource.bundle.ResourceBundleLoaderAnalyzerPlugin,com.liferay.ant.bnd.sass.SassAnalyzerPlugin,com.liferay.ant.bnd.service.ServiceAnalyzerPlugin,com.liferay.ant.bnd.social.SocialAnalyzerPlugin,aQute.lib.spring.SpringComponent,com.liferay.ant.bnd.spring.SpringDependencyAnalyzerPlugin,com.liferay.ant.bnd.enterprise.EnterpriseAnalyzerPlugin
+-plugin.metatype=com.liferay.ant.bnd.metatype.MetatypePlugin
+-provider-policy=${replacestring;${range;[\=\=,\=\=]};.*,(.*)];$1}
+-removeheaders=Bnd-LastModified
+-sass=*
+Bundle-ClassPath=.,lib/unirest-java.jar
+Bundle-Name=MRI Custom Admin Action
+Bundle-SymbolicName=mri.custom.admin.action.api
+Bundle-Version=1.33.0
+Export-Package=mri.custom.admin.action.api.constants
+Import-Package=,*;resolution\:\=optional
+Javac-Debug=on
+Javac-Deprecation=off
+Javac-Encoding=UTF-8
+archivesBaseName=mri.custom.admin.action.api
+buildTreePath=\:modules\:mri-custom-admin-action-api
+description=MRI Custom Admin Action
+displayName=project '\:modules\:mri-custom-admin-action-api'
+distsDirName=distributions
+docsDirName=docs
+environmentFileDir=.
+environmentName=local
+group=mri-workspace.modules
+libsDirName=libs
+liferay.workspace.bundle.dist.include.metadata=true
+liferay.workspace.home.dir=C\:/Work/Music_Reports/132/liferay-portal
+liferay.workspace.modules.dir=modules
+liferay.workspace.product=portal-7.4-ga132
+liferay.workspace.themes.dir=themes
+liferay.workspace.wars.dir=modules
+microsoft.translator.subscription.key=
+name=mri-custom-admin-action-api
+path=\:modules\:mri-custom-admin-action-api
+propertiesPluginEnvironmentFileDirProperty=environmentFileDir
+propertiesPluginEnvironmentNameProperty=environmentName
+propertiesPluginGradleUserNameProperty=gradleUserName
+status=integration
+target.platform.index.sources=false
+testReportDirName=tests
+testResultsDirName=test-results
+version=1.33.0

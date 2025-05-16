@@ -1,0 +1,95 @@
+<%@page import="com.liferay.portal.kernel.util.WebKeys"%>
+<%@page import="com.liferay.portal.kernel.dao.orm.QueryUtil"%>
+<%@page
+	import="com.liferay.oauth2.provider.service.OAuth2ApplicationLocalServiceUtil"%>
+<%@page import="com.liferay.oauth2.provider.model.OAuth2Application"%>
+<%@page import="java.util.List"%>
+<%@ include file="/init.jsp"%>
+
+<style>
+.padding-07 {
+	padding-top: 0.8rem !important;
+	padding-bottom: 0.7rem !important;
+}
+</style>
+
+<portlet:resourceURL id="/log/get-live-logs" var="liveLogMVCResourceURL" />
+
+<portlet:actionURL name="/client/generateToken" var="generateTokenURL" />
+
+<div class="row">
+	<div class="col-12 col-md-6">
+		<div
+			class="container-fluid container-fluid-max-xl container-view pl-0">
+			<ul class="list-group ">
+				<li class="list-group-header p-1 pl-3">
+					<h3 class="list-group-header-title text-uppercase padding-07">
+						<liferay-ui:message
+							key="javax.portlet.title.mri_custom_admin_action_api_MriCustomAdminActionApiPortlet" />
+					</h3>
+
+				</li>
+				<li class="list-group-card"><aui:form name="fm"
+						action="<%=generateTokenURL%>" method="post">
+						<aui:row>
+							<aui:col width="50">
+
+								<c:if test="${not empty oAuthList}">
+									<aui:select label="Select Client" name="oauthClient">
+										<c:forEach var="oauth" items="${oAuthList}">
+											<aui:option value="${oauth.getOAuth2ApplicationId()}">${oauth.getName()} </aui:option>
+										</c:forEach>
+									</aui:select>
+								</c:if>
+							</aui:col>
+						</aui:row>
+
+						<aui:button-row>
+							<aui:button type="submit"></aui:button>
+						</aui:button-row>
+					</aui:form></li>
+			</ul>
+		</div>
+
+	</div>
+	<div class="col-12 col-md-6">
+		<div
+			class="container-fluid container-fluid-max-xl container-view pl-0">
+			<ul class="list-group ">
+				<li class="list-group-header p-1 pl-3">
+					<h3 class="list-group-header-title text-uppercase">
+						<liferay-ui:message key="right.panel.title" />
+					</h3>
+					<div class="pull-right">
+						<button class="btn btn-primary" id="subscibeLogButton">
+							<liferay-ui:message key="start.log.button" />
+						</button>
+						<button class="btn btn-primary" id="stopLogButton"
+							disabled="disabled">
+							<liferay-ui:message key="stop.log.button" />
+						</button>
+					</div>
+
+				</li>
+				<li class="list-group-card">
+					<ul class="list-group">
+						<div id="liveLogDiv"></div>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+
+<script type="text/javascript">
+	var liveLogMVCResourceURL = '${liveLogMVCResourceURL}';
+	var nameSpace = '<portlet:namespace/>'
+</script>
+
+
+
+
+
+

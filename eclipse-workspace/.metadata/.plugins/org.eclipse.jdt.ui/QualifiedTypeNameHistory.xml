@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="com.ignek.marketplace.orphen.fragment.cleaner.constants.OrphenFragmentCleanerConstants"/>
+    <fullyQualifiedTypeName name="com.liferay.petra.string.StringPool"/>
+    <fullyQualifiedTypeName name="org.osgi.service.component.annotations.Component"/>
+    <fullyQualifiedTypeName name="org.osgi.service.component.annotations.Reference"/>
+    <fullyQualifiedTypeName name="com.ignek.marketplace.orphen.fragment.cleaner.portlet.action.OrphenFragmentCleanerMVCActionCommand"/>
+    <fullyQualifiedTypeName name="com.ignek.marketplace.orphen.fragment.cleaner.log.OrphenLogFactory"/>
+    <fullyQualifiedTypeName name="com.ignek.marketplace.orphen.fragment.cleaner.log.OrphenLog"/>
+    <fullyQualifiedTypeName name="com.ignek.marketplace.orphen.fragment.cleaner.log.DefaultOrphenLogFactory"/>
+</qualifiedTypeNameHistroy>

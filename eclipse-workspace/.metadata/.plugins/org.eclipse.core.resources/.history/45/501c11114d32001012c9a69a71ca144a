@@ -1,0 +1,28 @@
+package com.ignek.marketplace.orphen.fragment.cleaner.log;
+
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactory;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+
+import java.util.HashMap;
+
+public interface OrphenLogFactory  extends LogFactory {
+
+    HashMap<String, Log> logInstances = new HashMap<>();
+
+    @Override
+    public Log getLog(Class<?> clazz) {
+        return getLog(clazz.getName());
+    }
+
+    @Override
+    public Log getLog(String name) {
+        if (!logInstances.containsKey(name))
+            logInstances.put(name, new OrphenLog(LogFactoryUtil.getLog(name)));
+
+        return logInstances.get(name);
+    }
+	
+}
+
+

@@ -1,0 +1,32 @@
+var logEvent =  null;
+
+$(document).ready(function() {
+		$("#executeButton").on('click', function() {
+			subscribeLogs();
+			logEvent = setInterval(function() {
+				subscribeLogs();
+			}, 2000);
+		});
+
+})
+
+function subscribeLogs() {
+	var formData = new FormData();
+	$.ajax({
+	    url: liveLogMVCResourceURL,
+	    data : formData,
+	    processData: false, 
+	    cache: false,
+	    contentType: false,
+	    type: 'post',
+	    success: function( data ){
+	    	$("#liveLogDiv").html("");
+	    	$.each(data,function(key,value){
+	    		$("#liveLogDiv").prepend(`
+	    		<p>`+value+`</p>		
+	    		`);
+	    	});
+	    }
+	});
+}
+
