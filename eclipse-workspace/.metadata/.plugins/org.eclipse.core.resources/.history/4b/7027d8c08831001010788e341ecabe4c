@@ -1,0 +1,5 @@
+package com.ignek.marketplace.orphen.fragment.cleaner.portlet.action;
+
+public class OrphenFragmentCleanerMVCActionCommand {
+
+}

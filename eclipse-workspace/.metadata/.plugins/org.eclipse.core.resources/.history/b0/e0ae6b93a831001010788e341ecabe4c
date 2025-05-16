@@ -1,0 +1,31 @@
+//package com.ignek.marketplace.orphen.fragment.cleaner.portlet;
+//
+//import com.ignek.marketplace.orphen.fragment.cleaner.constants.OrphenFragmentCleanerWebPortletKeys;
+//import com.liferay.portal.kernel.model.Group;
+//import com.liferay.portal.kernel.model.Portlet;
+//import com.liferay.portal.kernel.portlet.BaseControlPanelEntry;
+//import com.liferay.portal.kernel.portlet.ControlPanelEntry;
+//import com.liferay.portal.kernel.security.permission.PermissionChecker;
+//
+//import org.osgi.service.component.annotations.Component;
+//
+//@Component(
+//		property = "javax.portlet.name=" + OrphenFragmentCleanerWebPortletKeys.ORPHENFRAGMENTCLEANERWEB,
+//		service = ControlPanelEntry.class
+//	)
+//public class OrphenFragmentCleanerControlPanelEntry extends BaseControlPanelEntry{
+//
+//	@Override
+//	protected boolean hasAccessPermissionDenied(
+//			PermissionChecker permissionChecker, Group group, Portlet portlet)
+//		throws Exception {
+//
+//		if (!group.isLayoutSetPrototype()) {
+//			return true;
+//		}
+//
+//		return super.hasAccessPermissionDenied(
+//			permissionChecker, group, portlet);
+//	}
+//	
+//}

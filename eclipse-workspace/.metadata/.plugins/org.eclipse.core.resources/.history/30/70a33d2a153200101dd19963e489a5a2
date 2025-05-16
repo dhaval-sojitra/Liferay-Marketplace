@@ -1,0 +1,8 @@
+<%@ include file="/init.jsp" %>
+
+<portlet:actionURL name="/orphen_fragment_cleaner" var="fragmentCleanerURL"/>
+
+<div class="cleaner-container">
+        <p class="fw-medium">Orfen Fragment Cleaner</p>
+        <a class="btn btn-primary" href="<%=fragmentCleanerURL %>">Execute</a>
+    </div>

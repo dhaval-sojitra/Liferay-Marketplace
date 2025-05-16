@@ -1,0 +1,9 @@
+<%@ include file="/init.jsp" %>
+
+<portlet:actionURL name="/orphen_fragment_cleaner" var="fragmentCleanerURL"/>
+
+<p>
+	<b><liferay-ui:message key="orphenfragmentcleanerweb.caption"/></b>
+</p>
+<h4>Orphen Fragment cleaner</h4>
+<a href="<%=fragmentCleanerURL %>">Execute</a>

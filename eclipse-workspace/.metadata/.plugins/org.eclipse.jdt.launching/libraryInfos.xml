@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+    <libraryInfo home="/home/dell/work/software/LiferayWorkspacewithDevStudio/liferay-developer-studio/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.13.v20241023-1126/jre" version="17.0.13"/>
+    <libraryInfo home="/home/dell/work/software/LiferayWorkspacewithDevStudio/liferay-developer-studio/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.13.v20241023-1126" version="17.0.13"/>
+    <libraryInfo home="/usr/lib/jvm/zulu8-ca-amd64" version="1.8.0_452">
+        <bootpath>
+            <entry path="/usr/lib/jvm/zulu8-ca-amd64/jre/lib/resources.jar"/>
+            <entry path="/usr/lib/jvm/zulu8-ca-amd64/jre/lib/rt.jar"/>
+            <entry path="/usr/lib/jvm/zulu8-ca-amd64/jre/lib/sunrsasign.jar"/>
+            <entry path="/usr/lib/jvm/zulu8-ca-amd64/jre/lib/jsse.jar"/>
+            <entry path="/usr/lib/jvm/zulu8-ca-amd64/jre/lib/jce.jar"/>
+            <entry path="/usr/lib/jvm/zulu8-ca-amd64/jre/lib/charsets.jar"/>
+            <entry path="/usr/lib/jvm/zulu8-ca-amd64/jre/lib/jfr.jar"/>
+            <entry path="/usr/lib/jvm/zulu8-ca-amd64/jre/lib/cat.jar"/>
+            <entry path="/usr/lib/jvm/zulu8-ca-amd64/jre/classes"/>
+        </bootpath>
+        <extensionDirs>
+            <entry path="/usr/lib/jvm/zulu8-ca-amd64/jre/lib/ext"/>
+            <entry path="/usr/java/packages/lib/ext"/>
+        </extensionDirs>
+        <endorsedDirs>
+            <entry path="/usr/lib/jvm/zulu8-ca-amd64/jre/lib/endorsed"/>
+        </endorsedDirs>
+    </libraryInfo>
+    <libraryInfo home="/usr/lib/jvm/zulu21-ca-amd64" version="21.0.7"/>
+    <libraryInfo home="/usr/lib/jvm/java-11-openjdk-amd64" version="11.0.27"/>
+</libraryInfos>

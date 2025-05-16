@@ -1,0 +1,8 @@
+<%@ include file="/init.jsp" %>
+
+<p>
+	<b><liferay-ui:message key="orphenfragmentcleanerweb.caption"/></b>
+</p>
+
+<h1>Orphen Fragment Cleaner::</h1>
+	<a href="">Execute</a>

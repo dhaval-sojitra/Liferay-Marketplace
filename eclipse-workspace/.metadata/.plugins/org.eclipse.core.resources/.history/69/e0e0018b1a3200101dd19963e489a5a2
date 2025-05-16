@@ -1,0 +1,11 @@
+package com.ignek.marketplace.orphen.fragment.cleaner.constants;
+
+/**
+ * @author dell
+ */
+public class OrphenFragmentCleanerWebPortletKeys {
+
+	public static final String ORPHENFRAGMENTCLEANERWEB =
+		"com_liferay_marketplace_orphen_fragment_cleaner_OrphenFragmentCleanerWebPortlet";
+
+}

@@ -1,0 +1,5 @@
+INDEX VERSION 1.134
+/home/dell/work/projects/liferay-marketplace/eclipse-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3544284681.index
+/test-module/src/main/java
+/home/dell/work/projects/liferay-marketplace/eclipse-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/564889191.index
+/orphen-fragment-cleaner-web/src/main/java

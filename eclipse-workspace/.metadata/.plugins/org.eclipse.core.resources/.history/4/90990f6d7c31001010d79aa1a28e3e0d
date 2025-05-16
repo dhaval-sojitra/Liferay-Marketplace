@@ -1,0 +1,14 @@
+package com.liferay.marketplace.orphen.fragment.cleaner.portlet.action;
+
+import org.osgi.service.component.annotations.Component;
+
+@Component(
+		property= {
+				"javax.portlet.name="+OrphenFragmentCleanerWebPortlet
+		}
+		service = MVCActionCommand.class
+)
+
+public class FragmentCleanerMVCActionCommand {
+
+}

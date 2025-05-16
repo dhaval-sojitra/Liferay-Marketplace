@@ -1,0 +1,31 @@
+package com.ignek.marketplace.orphen.fragment.cleaner.portlet;
+
+import com.ignek.marketplace.orphen.fragment.cleaner.constants.OrphenFragmentCleanerWebPortletKeys;
+import com.liferay.application.list.BasePanelApp;
+import com.liferay.application.list.PanelApp;
+import com.liferay.application.list.constants.PanelCategoryKeys;
+import com.liferay.portal.kernel.model.Portlet;
+
+import org.osgi.service.component.annotations.Component;
+
+@Component(
+		property = {
+			"panel.app.order:Integer=0",
+			"panel.category.key="+PanelCategoryKeys.CONTROL_PANEL_USERS
+		},
+		service = PanelApp.c
+)
+public class OrphenFragmentCleanerPanelApp extends BasePanelApp{
+
+	@Override
+	public Portlet getPortlet() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getPortletId() {
+		return OrphenFragmentCleanerWebPortletKeys.ORPHENFRAGMENTCLEANERWEB;
+	}
+
+}

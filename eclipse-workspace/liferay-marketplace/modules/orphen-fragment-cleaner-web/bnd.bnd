@@ -1,0 +1,7 @@
+Bundle-Name: Orphen Fragment Cleaner Web
+Bundle-SymbolicName: com.liferay.marketplace.orphen.fragment.cleaner
+Bundle-Version: 1.0.0
+Export-Package: com.liferay.marketplace.orphen.fragment.cleaner.constants
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"

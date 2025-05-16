@@ -1,0 +1,7 @@
+1747306593843	Rename type 'OrphenFragmentCleanerWebPortlet'
+1747311768006	Rename package 'com.liferay.marketplace.orphen.fragment.cleaner.constants'
+1747311782796	Rename package 'com.liferay.marketplace.orphen.fragment.cleaner.portlet'
+1747326129474	Delete element
+1747375003129	Rename field 'ORPHENFRAGMENTCLEANERWEB'
+1747375560529	Rename resource 'view.jsp'
+1747375602928	Rename resource 'fragmentcleaner.jsp'
